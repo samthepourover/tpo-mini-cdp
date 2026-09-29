@@ -1,0 +1,24 @@
+{
+  "name": "tpo-mini-cdp",
+  "version": "1.0.0",
+  "description": "Mini Customer Data Platform for The Pour Over",
+  "type": "module",
+  "main": "src/server.js",
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "node --test test/*.test.js",
+    "seed": "node scripts/generate-fake-data.js",
+    "webhook": "node scripts/send-webhook.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.129.0",
+    "cookie-parser": "^1.4.7",
+    "csv-parse": "^5.6.0",
+    "express": "^4.21.2",
+    "multer": "^1.4.5-lts.1"
+  }
+}

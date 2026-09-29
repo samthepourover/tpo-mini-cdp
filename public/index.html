@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Pour Over CDP</title>
+  <meta name="description" content="The Pour Over's customer data platform: one view of every reader.">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="/styles.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#/overview" aria-label="The Pour Over CDP, overview">
+        <img class="brand-mark" src="/favicon.svg" alt="" width="40" height="40">
+        <span class="brand-word">The Pour Over</span>
+        <span class="brand-tag">CDP</span>
+      </a>
+      <form class="logout" method="post" action="/logout">
+        <button type="submit" class="btn btn-quiet btn-sm">Log out</button>
+      </form>
+    </div>
+    <nav class="tabs" aria-label="Main">
+      <div class="tabs-inner" id="nav">
+        <a href="#/overview" data-route="overview">Overview</a>
+        <a href="#/import" data-route="import">Import</a>
+        <a href="#/lookup" data-route="lookup">Lookup</a>
+        <a href="#/segments" data-route="segments">Segments</a>
+        <a href="#/assistant" data-route="assistant">Assistant</a>
+        <a href="#/webhooks" data-route="webhooks">Webhooks</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main" class="main" tabindex="-1">
+    <noscript><p class="empty">This tool needs JavaScript turned on.</p></noscript>
+    <p class="loading">Pouring a fresh cup…</p>
+  </main>
+
+  <footer class="site-footer">
+    <p>Made for the Growth team at The Pour Over. Customer data stays on our server; the AI assistant only ever sees masked data.</p>
+  </footer>
+</body>
+</html>

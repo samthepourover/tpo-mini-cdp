@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 64" width="300" height="64" role="img" aria-labelledby="t">
+  <title id="t">The Pour Over CDP</title>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="32" cy="32" r="28.5" stroke="#F2827F" stroke-width="3"/>
+    <g stroke="#463F3A" stroke-width="2.2">
+      <path d="M26 14.5c-1.4 1.6-1.4 3.2 0 4.8M32 13.5c-1.4 1.6-1.4 3.2 0 4.8M38 14.5c-1.4 1.6-1.4 3.2 0 4.8"/>
+      <path d="M19 23h26l-8.5 12.5h-9z"/>
+      <path d="M45 25.2c4.2-.2 5.6 2 5.2 3.9-.4 1.9-2.6 3-6.2 3.2"/>
+      <path d="M32 38.5v2.8"/>
+      <path d="M21.5 44.5h21v1.2a6.8 6.8 0 0 1-6.8 6.8h-7.4a6.8 6.8 0 0 1-6.8-6.8z"/>
+    </g>
+  </g>
+  <text x="76" y="40" font-family="Poppins, 'Helvetica Neue', Arial, sans-serif" font-size="22" font-weight="600" fill="#463F3A" letter-spacing="-.2">The Pour Over</text>
+  <g transform="translate(236 23)">
+    <rect x=".75" y=".75" width="46.5" height="22.5" rx="11.25" fill="#FFFFFF" stroke="#463F3A" stroke-opacity=".35" stroke-width="1.5"/>
+    <text x="24" y="16.2" text-anchor="middle" font-family="Poppins, 'Helvetica Neue', Arial, sans-serif" font-size="11.5" font-weight="600" fill="#463F3A" letter-spacing="1.2">CDP</text>
+  </g>
+</svg>

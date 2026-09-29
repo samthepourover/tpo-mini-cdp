@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign in · The Pour Over CDP</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="/styles.css">
+  <script type="module" src="/login.js"></script>
+</head>
+<body class="login-page">
+  <main class="login-wrap">
+    <div class="card login-card">
+      <div class="login-brand">
+        <img src="/favicon.svg" alt="" width="64" height="64">
+        <p class="brand-word">The Pour Over</p>
+        <span class="brand-tag">CDP</span>
+      </div>
+      <h1 class="login-title">Welcome back</h1>
+      <p class="muted">One calm view of every reader. Sign in with the team password to continue.</p>
+
+      <p id="login-error" class="notice notice-error" role="alert" hidden>That password didn't work. Give it another try.</p>
+
+      <form method="post" action="/login" class="stack">
+        <label class="field">
+          <span class="field-label">Team password</span>
+          <input type="password" name="password" autocomplete="current-password" required autofocus>
+        </label>
+        <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+      </form>
+      <p class="small muted login-foot">Having trouble? Ask the Growth team lead for the current password.</p>
+    </div>
+  </main>
+</body>
+</html>
