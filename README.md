@@ -2,8 +2,8 @@
 
 A small customer data platform for The Pour Over's Growth team. It loads newsletter subscribers, website visits and app accounts into one place. It links each visit and app account to a person, takes in live mobile-app events by webhook, and lets a teammate ask plain-English questions of an AI assistant **that never sees PII**.
 
-- **Live app:** `<RAILWAY_URL>` (password protected)
-- **Webhook:** `POST <RAILWAY_URL>/webhooks/app` (HMAC-signed, see [docs/WEBHOOK.md](docs/WEBHOOK.md))
+- **Live app:** `https://tpo-mini-cdp-production.up.railway.app` (password protected)
+- **Webhook:** `POST https://tpo-mini-cdp-production.up.railway.app/webhooks/app` (HMAC-signed, see [docs/WEBHOOK.md](docs/WEBHOOK.md))
 - **PII design:** [docs/PII.md](docs/PII.md)
 
 ## Run it locally
