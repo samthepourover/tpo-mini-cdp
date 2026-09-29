@@ -704,7 +704,7 @@ const FALLBACK_FIELDS = [
   { name: 'web_visits_min', type: 'number', label: 'At least this many website visits' },
   { name: 'web_visits_within_days', type: 'number', label: '…within the last (days)' },
   { name: 'visited_page', type: 'string', label: 'Visited a page containing', description: 'For example /subscribe' },
-  { name: 'sort', type: 'enum', label: 'Sort by', options: [{ value: 'engagement_desc', label: 'Most engaged first' }, { value: 'signup_desc', label: 'Newest signups first' }, { value: 'last_open_desc', label: 'Most recent opens first' }] },
+  { name: 'sort', type: 'enum', label: 'Sort by', options: [{ value: 'engagement_desc', label: 'Most engaged first' }, { value: 'signup_desc', label: 'Newest signups first' }, { value: 'last_open_desc', label: 'Most recent opens first' }, { value: 'web_visits_desc', label: 'Most website visits first' }, { value: 'app_events_desc', label: 'Most app activity first' }] },
   { name: 'limit', type: 'number', label: 'Show at most' },
 ];
 
@@ -730,7 +730,7 @@ const FIELD_COPY = {
   limit: ['Show at most (people)', 'The total count always covers everyone who matches.'],
 };
 const OPTION_COPY = {
-  engagement_desc: 'Most engaged first', signup_desc: 'Newest signups first', last_open_desc: 'Most recent opens first',
+  engagement_desc: 'Most engaged first', signup_desc: 'Newest signups first', last_open_desc: 'Most recent opens first', web_visits_desc: 'Most website visits first', app_events_desc: 'Most app activity first',
   app_open: 'Opened the app', read_story: 'Read a story', link_click: 'Clicked a link', login: 'Logged in',
 };
 

@@ -40,7 +40,7 @@ export const SEGMENT_FIELDS = [
   { name: 'web_visits_min', type: 'integer', min: 0, max: 1000000, label: 'Min website visits', description: 'At least this many website page views (optionally within web_visits_within_days).' },
   { name: 'web_visits_within_days', type: 'integer', min: 0, max: MAX_DAYS, label: 'Website visits window (days)', description: 'Only count page views from the last N days (applies to web_visits_min and the web_visits column).' },
   { name: 'visited_page', type: 'string', label: 'Visited page containing', description: 'Has viewed at least one website page whose path contains this text (e.g. "/subscribe", "/articles/").' },
-  { name: 'sort', type: 'enum', label: 'Sort by', description: `engagement_desc (default) | signup_desc (newest signups first) | last_open_desc (most recent openers first). ${ENGAGEMENT_FORMULA}`, options: ['engagement_desc', 'signup_desc', 'last_open_desc'] },
+  { name: 'sort', type: 'enum', label: 'Sort by', description: `engagement_desc (default) | signup_desc (newest signups first) | last_open_desc (most recent openers first) | web_visits_desc (most website visits first; counts respect web_visits_within_days) | app_events_desc (most app events first; counts respect app_events_within_days/app_event_type). ${ENGAGEMENT_FORMULA}`, options: ['engagement_desc', 'signup_desc', 'last_open_desc', 'web_visits_desc', 'app_events_desc'] },
   { name: 'limit', type: 'integer', min: 1, max: MAX_LIMIT, label: 'Max rows', description: 'Maximum number of rows to return (the total count is always the full segment size).' },
 ];
 
@@ -185,6 +185,8 @@ function buildQuery(s) {
     engagement_desc: 'engagement DESC, last_open_date DESC NULLS LAST, id',
     signup_desc: 'signup_date DESC NULLS LAST, id',
     last_open_desc: 'last_open_date DESC NULLS LAST, id',
+    web_visits_desc: 'web_visits DESC, engagement DESC, id',
+    app_events_desc: 'app_events DESC, engagement DESC, id',
   }[s.sort || 'engagement_desc'];
 
   const sql = `SELECT * FROM (${base}) AS seg ${where.length ? 'WHERE ' + where.join(' AND ') : ''}`;

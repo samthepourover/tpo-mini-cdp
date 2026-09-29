@@ -128,7 +128,7 @@ const SPEC_SCHEMA = {
     web_visits_min: { type: 'integer', description: 'At least N website page views (optionally within web_visits_within_days).' },
     web_visits_within_days: { type: 'integer' },
     visited_page: { type: 'string', description: 'Substring of a page path the person visited, e.g. "/subscribe".' },
-    sort: { type: 'string', enum: ['engagement_desc', 'signup_desc', 'last_open_desc'] },
+    sort: { type: 'string', enum: ['engagement_desc', 'signup_desc', 'last_open_desc', 'web_visits_desc', 'app_events_desc'] },
     limit: { type: 'integer', description: 'Cap the segment size (e.g. top 100 most engaged).' },
   },
 };

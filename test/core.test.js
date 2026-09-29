@@ -354,3 +354,18 @@ describe('CSV export escaping', () => {
     assert.equal(csvCell(12), '12');
   });
 });
+
+test('segments can be sorted by website visits and app activity, descending', () => {
+  const db = openTestDb();
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'cdp-sort-'));
+  const { files } = generateFixtures(dir, { seed: 7, scale: 0.2 });
+  ingestCsv(db, 'subscribers', fs.readFileSync(files.subscribers));
+  ingestCsv(db, 'web_events', fs.readFileSync(files.web_events));
+  for (const sort of ['web_visits_desc', 'app_events_desc']) {
+    const key = sort === 'web_visits_desc' ? 'web_visits' : 'app_events';
+    const { rows } = runSegment(db, { sort, limit: 50 });
+    assert.ok(rows.length > 0);
+    for (let i = 1; i < rows.length; i++) assert.ok(rows[i - 1][key] >= rows[i][key], `${sort} not descending`);
+  }
+  assert.ok(runSegment(db, { sort: 'web_visits_desc', limit: 1 }).rows[0].web_visits > 0);
+});
