@@ -46,4 +46,12 @@ app.use((err, _req, res, _next) => {
   res.status(err.status || 500).json({ error: err.expose ? err.message : 'Internal error' });
 });
 
-app.listen(config.port, () => console.log(`TPO mini CDP on :${config.port} (today=${config.today})`));
+const server = app.listen(config.port, () => console.log(`TPO mini CDP on :${config.port} (today=${config.today})`));
+
+// Railway sends SIGTERM when swapping deployments; exit cleanly so it isn't reported as a crash.
+for (const sig of ['SIGTERM', 'SIGINT']) {
+  process.on(sig, () => {
+    server.close(() => { try { getDb().close(); } catch {} process.exit(0); });
+    setTimeout(() => process.exit(0), 5000).unref();
+  });
+}
